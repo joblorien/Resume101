@@ -3,610 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Ryan | Technical Writer</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --neon-blue: #00d4ff;
-            --deep-blue: #0066ff;
-            --dark-bg: #0a0a0f;
-            --darker-bg: #050508;
-            --card-bg: rgba(20, 20, 30, 0.9);
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0b0;
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Animated Grid Background */
-        .grid-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.5rem 5%;
-            background: rgba(10, 10, 15, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--neon-blue), var(--deep-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--neon-blue);
-            text-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 100px 5% 0;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 900px;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            background: linear-gradient(135deg, #fff, var(--neon-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glow 3s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from { filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.3)); }
-            to { filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.6)); }
-        }
-
-        .hero .subtitle {
-            font-size: 1.5rem;
-            color: var(--neon-blue);
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .hero-desc {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1rem 2.5rem;
-            border: 1px solid var(--neon-blue);
-            background: transparent;
-            color: var(--neon-blue);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-
-        .btn:hover {
-            background: rgba(0, 212, 255, 0.1);
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
-            transform: translateY(-2px);
-        }
-
-        .btn-primary {
-            background: rgba(0, 212, 255, 0.1);
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
-        }
-
-        /* Sections */
-        section {
-            padding: 5rem 5%;
-            position: relative;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: var(--neon-blue);
-            margin: 1rem auto;
-            box-shadow: 0 0 10px var(--neon-blue);
-        }
-
-        /* About */
-        .about {
-            background: var(--darker-bg);
-        }
-
-        .about-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-
-        .highlight {
-            color: var(--neon-blue);
-            font-weight: 600;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
-
-        .stat-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            padding: 1.5rem;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
-            border-color: var(--neon-blue);
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--neon-blue);
-            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 0.5rem;
-        }
-
-        /* Skills */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .skill-category {
-            background: var(--card-bg);
-            border: 1px solid rgba(0, 212, 255, 0.1);
-            padding: 1.5rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .skill-category h3 {
-            color: var(--neon-blue);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-tag {
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            padding: 0.4rem 0.8rem;
-            font-size: 0.85rem;
-            color: var(--text-primary);
-            transition: all 0.3s;
-        }
-
-        .skill-tag:hover {
-            background: rgba(0, 212, 255, 0.2);
-            box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
-        }
-
-        /* Experience */
-        .timeline {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 30px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--neon-blue), transparent);
-        }
-
-        .timeline-item {
-            margin-bottom: 2rem;
-            padding-left: 80px;
-            position: relative;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: 20px;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            background: var(--dark-bg);
-            border: 3px solid var(--neon-blue);
-            border-radius: 50%;
-            box-shadow: 0 0 20px var(--neon-blue);
-        }
-
-        .timeline-content {
-            background: var(--card-bg);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            padding: 1.5rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .timeline-date {
-            color: var(--neon-blue);
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .timeline-company {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .timeline-desc ul {
-            list-style: none;
-            padding-left: 0;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .timeline-desc li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.2rem;
-            position: relative;
-        }
-
-        .timeline-desc li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: var(--neon-blue);
-        }
-
-        /* Portfolio */
-        .portfolio {
-            background: var(--darker-bg);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .portfolio-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(0, 212, 255, 0.1);
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.2);
-            border-color: var(--neon-blue);
-        }
-
-        .portfolio-header {
-            padding: 1.5rem;
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), transparent);
-            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
-        }
-
-        .portfolio-title {
-            font-size: 1.2rem;
-            color: var(--neon-blue);
-            margin-bottom: 0.3rem;
-        }
-
-        .portfolio-type {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .portfolio-body {
-            padding: 1.5rem;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        .portfolio-tags {
-            display: flex;
-            gap: 0.5rem;
-            padding: 0 1.5rem 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .portfolio-tag {
-            font-size: 0.75rem;
-            padding: 0.3rem 0.8rem;
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            color: var(--neon-blue);
-        }
-
-        /* Awards */
-        .award-card {
-            max-width: 600px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 102, 255, 0.1));
-            border: 2px solid var(--neon-blue);
-            padding: 2.5rem;
-            text-align: center;
-            box-shadow: 0 0 40px rgba(0, 212, 255, 0.2);
-        }
-
-        .award-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .award-title {
-            font-size: 1.6rem;
-            color: var(--neon-blue);
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .award-org {
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-        }
-
-        .award-date {
-            display: inline-block;
-            padding: 0.3rem 1rem;
-            background: rgba(0, 212, 255, 0.2);
-            color: var(--neon-blue);
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Education */
-        .education-card {
-            max-width: 600px;
-            margin: 0 auto;
-            background: var(--card-bg);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .edu-degree {
-            font-size: 1.3rem;
-            color: var(--neon-blue);
-            margin-bottom: 0.5rem;
-        }
-
-        .edu-school {
-            font-size: 1rem;
-            color: var(--text-primary);
-            margin-bottom: 0.3rem;
-        }
-
-        .edu-details {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .cert-list {
-            max-width: 600px;
-            margin: 2rem auto 0;
-        }
-
-        .cert-item {
-            background: var(--card-bg);
-            border: 1px solid rgba(0, 212, 255, 0.1);
-            padding: 1rem;
-            margin-bottom: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .cert-name {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        .cert-provider {
-            color: var(--neon-blue);
-            font-size: 0.9rem;
-        }
-
-        .cert-date {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-        }
-
-        /* Contact */
-        .contact {
-            background: var(--darker-bg);
-            text-align: center;
-        }
-
-        .contact-desc {
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            padding: 1rem 2rem;
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            background: rgba(0, 212, 255, 0.05);
-            transition: all 0.3s;
-        }
-
-        .contact-link:hover {
-            color: var(--neon-blue);
-            border-color: var(--neon-blue);
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
-            transform: translateY(-3px);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid rgba(0, 212, 255, 0.1);
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .hero {
-                padding-top: 80px;
-            }
-        }
-    </style>
+    <title>Job Ryan | Technical Writer & Documentation Specialist</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="grid-bg"></div>
@@ -618,6 +16,7 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -625,7 +24,7 @@
         <div class="hero-content">
             <h1>Job Ryan</h1>
             <div class="subtitle">Technical Writer - Associate II</div>
-            <p class="hero-desc">Crafting clarity from complexity • Documentation Architect • DITA Specialist • XML Expert</p>
+            <p class="hero-desc">Crafting clarity from complexity • Documentation Architect • DITA Specialist</p>
             <div class="cta-buttons">
                 <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
                 <a href="mailto:jobrider123@gmail.com" class="btn">Contact Me</a>
@@ -668,7 +67,7 @@
         <h2 class="section-title">Tech Stack</h2>
         <div class="skills-grid">
             <div class="skill-category">
-                <h3>⚡ Standards & Languages</h3>
+                <h3>Standards & Languages</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">Markdown</span>
                     <span class="skill-tag">XML</span>
@@ -679,7 +78,7 @@
                 </div>
             </div>
             <div class="skill-category">
-                <h3>⚡ Authoring Tools</h3>
+                <h3>Authoring Tools</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">Pennant R4i Writer</span>
                     <span class="skill-tag">Adobe FrameMaker</span>
@@ -689,7 +88,194 @@
                 </div>
             </div>
             <div class="skill-category">
-                <h3>⚡ Collaboration & CMS</h3>
+                <h3>Collaboration & CMS</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">Git / GitHub</span>
-                    <span class="skill-ta
+                    <span class="skill-tag">JIRA</span>
+                    <span class="skill-tag">CMS</span>
+                    <span class="skill-tag">MS Office</span>
+                    <span class="skill-tag">Excel</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Processes</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Agile SDLC</span>
+                    <span class="skill-tag">DDLC</span>
+                    <span class="skill-tag">Docs-as-Code</span>
+                    <span class="skill-tag">Peer Review</span>
+                    <span class="skill-tag">Impact Analysis</span>
+                    <span class="skill-tag">Structured Authoring</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="about">
+        <h2 class="section-title">Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Nov 2023 - Present</div>
+                    <h3 class="timeline-title">Technical Writer - Associate II</h3>
+                    <div class="timeline-company">Capgemini • Bangalore</div>
+                    <div class="timeline-desc">
+                        <ul>
+                            <li>Authored, updated, and maintained 350+ XML-based documents ensuring DITA compliance</li>
+                            <li>Translated complex engineering specs into user-friendly documentation</li>
+                            <li>Managed end-to-end documentation lifecycle and version control</li>
+                            <li>Primary peer reviewer ensuring zero-defect deliverables</li>
+                            <li>Led vendor data recreation and CMS workflow improvements</li>
+                            <li>Trained and mentored 20+ team members on structured authoring tools</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Apr 2023 - May 2023</div>
+                    <h3 class="timeline-title">Technical Writer Intern</h3>
+                    <div class="timeline-company">Capgemini • Bangalore</div>
+                    <div class="timeline-desc">
+                        <ul>
+                            <li>Supported authoring and proofreading for technical documentation</li>
+                            <li>Assisted in maintaining documentation quality standards</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Apr 2021 - Sep 2021</div>
+                    <h3 class="timeline-title">Academic Support & Technical Writer Intern</h3>
+                    <div class="timeline-company">Sunali's Classes • Remote</div>
+                    <div class="timeline-desc">
+                        <ul>
+                            <li>Authored academic content to improve clarity and structure</li>
+                            <li>Enhanced language and documentation standards</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <h2 class="section-title">Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="portfolio-header">
+                    <h3 class="portfolio-title">Salesforce CRM Documentation</h3>
+                    <div class="portfolio-type">Product Documentation</div>
+                </div>
+                <div class="portfolio-body">
+                    Created high-level product documentation outlining Salesforce CRM's features, SaaS model, and user base. Demonstrated ability to write clear, structured content for enterprise SaaS platforms.
+                </div>
+                <div class="portfolio-tags">
+                    <span class="portfolio-tag">SaaS</span>
+                    <span class="portfolio-tag">CRM</span>
+                    <span class="portfolio-tag">Product Docs</span>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-header">
+                    <h3 class="portfolio-title">Modular User Guides</h3>
+                    <div class="portfolio-type">SaaS User Guide</div>
+                </div>
+                <div class="portfolio-body">
+                    Developed modular, task-based user guides covering onboarding, user roles, lead management, and troubleshooting. Organized content into multiple Markdown files reflecting industry documentation standards.
+                </div>
+                <div class="portfolio-tags">
+                    <span class="portfolio-tag">Markdown</span>
+                    <span class="portfolio-tag">Modular Writing</span>
+                    <span class="portfolio-tag">UX Writing</span>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-header">
+                    <h3 class="portfolio-title">Help Center Articles</h3>
+                    <div class="portfolio-type">Help Documentation</div>
+                </div>
+                <div class="portfolio-body">
+                    Authored concise help articles addressing common user issues like password reset, lead creation, and error resolution. Focused on clarity and user self-service to reduce support tickets.
+                </div>
+                <div class="portfolio-tags">
+                    <span class="portfolio-tag">Help Center</span>
+                    <span class="portfolio-tag">Troubleshooting</span>
+                    <span class="portfolio-tag">Self-Service</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards">
+        <h2 class="section-title">Recognition</h2>
+        <div class="award-card">
+            <div class="award-icon">🏆</div>
+            <h3 class="award-title">WOW Award</h3>
+            <div class="award-org">Capgemini</div>
+            <div class="award-date">October 2024</div>
+            <p class="award-desc">
+                Recognized for quickly cross-skilling to handle multiple technical documents, becoming proficient in Tech Illustrator, and providing strong team support through high-quality peer reviews and backlog rework ownership.
+            </p>
+        </div>
+    </section>
+
+    <section id="education" class="about">
+        <h2 class="section-title">Education</h2>
+        <div class="education-card">
+            <h3 class="edu-degree">B.E. Aeronautical Engineering</h3>
+            <div class="edu-school">KCG College Of Technology | Anna University</div>
+            <div class="edu-details">Chennai • May 2019 - May 2023</div>
+        </div>
+
+        <div class="cert-list">
+            <div class="cert-item">
+                <div>
+                    <div class="cert-name">Version Control</div>
+                    <div class="cert-provider">Meta</div>
+                </div>
+                <div class="cert-date">Dec 2025</div>
+            </div>
+            <div class="cert-item">
+                <div>
+                    <div class="cert-name">Learn Markdown</div>
+                    <div class="cert-provider">Scrimba</div>
+                </div>
+                <div class="cert-date">Dec 2025</div>
+            </div>
+            <div class="cert-item">
+                <div>
+                    <div class="cert-name">General English C2</div>
+                    <div class="cert-provider">EF SOLO</div>
+                </div>
+                <div class="cert-date">Dec 2023</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">Initialize Contact</h2>
+        <p class="contact-desc">Ready to document the future? Let's connect and create something extraordinary together.</p>
+        <div class="contact-links">
+            <a href="mailto:jobrider123@gmail.com" class="contact-link">✉ jobrider123@gmail.com</a>
+            <a href="tel:+919704870370" class="contact-link">📱 +91 97048 70370</a>
+            <a href="https://github.com/joblorien/Softech_portfolio" target="_blank" class="contact-link">⚡ GitHub Portfolio</a>
+        </div>
+        <div class="location">📍 Bangalore, India</div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Job Ryan. <span class="highlight">Documentation Architect</span> • System Online</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
