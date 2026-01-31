@@ -677,65 +677,7 @@
             pointer-events: none;
         }
 
-        .award-card {
-            max-width: 700px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, rgba(184, 41, 221, 0.08), rgba(0, 212, 255, 0.03));
-            border: 2px solid rgba(184, 41, 221, 0.3);
-            padding: 3.5rem;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 0 40px rgba(184, 41, 221, 0.15);
-            animation: award-glow 3s ease-in-out infinite;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s;
-        }
-
-        .award-card:hover {
-            transform: translateY(-5px);
-            background: linear-gradient(135deg, rgba(184, 41, 221, 0.15), rgba(0, 212, 255, 0.05));
-            border-color: rgba(184, 41, 221, 0.6);
-            box-shadow: 0 20px 60px rgba(184, 41, 221, 0.4);
-        }
-
-        @keyframes award-glow {
-            0%, 100% { box-shadow: 0 0 40px rgba(184, 41, 221, 0.15); }
-            50% { box-shadow: 0 0 60px rgba(184, 41, 221, 0.25), 0 0 100px rgba(184, 41, 221, 0.1); }
-        }
-
-        .award-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            filter: drop-shadow(0 0 20px rgba(184, 41, 221, 0.5));
-        }
-
-        .award-title {
-            color: var(--neon-purple);
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 0 0 20px rgba(184, 41, 221, 0.5);
-        }
-
-        .award-org {
-            color: var(--text-secondary);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .award-date {
-            display: inline-block;
-            background: rgba(184, 41, 221, 0.2);
-            color: var(--neon-purple);
-            padding: 0.5rem 2rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border: 1px solid rgba(184, 41, 221, 0.5);
-            box-shadow: 0 0 20px rgba(184, 41, 221, 0.3);
-        }
+        
 
         .award-desc {
             color: var(--text-secondary);
@@ -750,7 +692,64 @@
 
         .education-section::before {
             content: '';
-            position: absolute;
+            posit        .award-card {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            padding: 3.5rem;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.15);
+            animation: award-glow 3s ease-in-out infinite;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+
+        .award-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.3);
+        }
+
+        @keyframes award-glow {
+            0%, 100% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.15); }
+            50% { box-shadow: 0 0 80px rgba(0, 212, 255, 0.3), 0 0 120px rgba(184, 41, 221, 0.1); }
+        }
+
+        .award-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.5));
+        }
+
+        .award-title {
+            color: var(--neon-blue);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .award-org {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .award-date {
+            display: inline-block;
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--neon-blue);
+            padding: 0.5rem 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid rgba(0, 212, 255, 0.5);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+ion: absolute;
             top: 0;
             left: 0;
             right: 0;
@@ -759,15 +758,15 @@
             pointer-events: none;
         }
 
-        .edu-card {
+                .edu-card {
             max-width: 600px;
             margin: 0 auto 3rem;
-            background: var(--card-bg);
-            border: 2px solid rgba(0, 212, 255, 0.3);
+            background: linear-gradient(135deg, rgba(184, 41, 221, 0.08), rgba(0, 212, 255, 0.03));
+            border: 2px solid rgba(184, 41, 221, 0.3);
             padding: 3rem;
             text-align: center;
             position: relative;
-            box-shadow: 0 0 40px rgba(0, 212, 255, 0.15);
+            box-shadow: 0 0 40px rgba(184, 41, 221, 0.15);
             animation: edu-glow 3s ease-in-out infinite;
             backdrop-filter: blur(10px);
             transition: all 0.3s;
@@ -775,20 +774,23 @@
 
         .edu-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.3);
+            background: linear-gradient(135deg, rgba(184, 41, 221, 0.15), rgba(0, 212, 255, 0.05));
+            border-color: rgba(184, 41, 221, 0.6);
+            box-shadow: 0 20px 60px rgba(184, 41, 221, 0.4);
         }
 
         @keyframes edu-glow {
-            0%, 100% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.15); }
-            50% { box-shadow: 0 0 80px rgba(0, 212, 255, 0.3), 0 0 120px rgba(184, 41, 221, 0.1); }
+            0%, 100% { box-shadow: 0 0 40px rgba(184, 41, 221, 0.15); }
+            50% { box-shadow: 0 0 60px rgba(184, 41, 221, 0.25), 0 0 100px rgba(184, 41, 221, 0.1); }
         }
 
         .edu-degree {
-            color: var(--neon-blue);
+            color: var(--neon-purple);
             font-size: 1.8rem;
             margin-bottom: 0.5rem;
-            text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+            text-shadow: 0 0 15px rgba(184, 41, 221, 0.5);
         }
+
 
         .edu-school {
             color: var(--text-primary);
