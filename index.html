@@ -589,11 +589,22 @@
             text-shadow: 0 0 10px var(--neon-blue);
         }
 
-        /* Project Portfolio - Subtle glow like Professional Certificates */
+    
+                    /* Project Portfolio - updated */
         .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .portfolio-row {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            width: 100%;
         }
 
         .portfolio-card {
@@ -606,12 +617,18 @@
             backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .portfolio-card:first-child {
+            max-width: 400px;
         }
 
         .portfolio-card:hover {
             border-color: rgba(0, 212, 255, 0.4);
-            transform: translateX(10px);
-            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
         }
 
         .portfolio-header h3 {
@@ -659,6 +676,18 @@
             background: rgba(0, 212, 255, 0.2);
             box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
         }
+
+        @media (max-width: 768px) {
+            .portfolio-row {
+                flex-direction: column;
+                align-items: center;
+            }
+            .portfolio-card {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+        
 
                  /* Recognition Section - PURPLE Glow with expanding animation */
         .awards-section {
@@ -1184,12 +1213,12 @@
 
         </div>
     </section>
-
-    <!-- Project Portfolio - Subtle glow like Professional Certificates -->
+        <!-- Project Portfolio - Arranged -->
     <section id="portfolio" class="reveal">
         <h2 class="section-title">Project Portfolio</h2>
         <div class="portfolio-grid">
             
+            <!-- Top Center Card -->
             <div class="portfolio-card">
                 <div class="portfolio-header">
                     <h3>Salesforce CRM Documentation</h3>
@@ -1205,38 +1234,42 @@
                 </div>
             </div>
 
-            <div class="portfolio-card">
-                <div class="portfolio-header">
-                    <h3>SaaS User Guide</h3>
-                    <span class="portfolio-type">Salesforce CRM</span>
+            <!-- Bottom Row - Two Cards -->
+            <div class="portfolio-row">
+                <div class="portfolio-card">
+                    <div class="portfolio-header">
+                        <h3>SaaS User Guide</h3>
+                        <span class="portfolio-type">Salesforce CRM</span>
+                    </div>
+                    <p class="portfolio-desc">
+                        Developed modular, task-based user guides covering onboarding, user roles, lead management, and troubleshooting. Organized content into multiple Markdown files, reflecting industry documentation standards.
+                    </p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">Markdown</span>
+                        <span class="portfolio-tag">User Guide</span>
+                        <span class="portfolio-tag">Modular</span>
+                    </div>
                 </div>
-                <p class="portfolio-desc">
-                    Developed modular, task-based user guides covering onboarding, user roles, lead management, and troubleshooting. Organized content into multiple Markdown files, reflecting industry documentation standards.
-                </p>
-                <div class="portfolio-tags">
-                    <span class="portfolio-tag">Markdown</span>
-                    <span class="portfolio-tag">User Guide</span>
-                    <span class="portfolio-tag">Modular</span>
-                </div>
-            </div>
 
-            <div class="portfolio-card">
-                <div class="portfolio-header">
-                    <h3>Help Center Articles</h3>
-                    <span class="portfolio-type">Salesforce CRM</span>
-                </div>
-                <p class="portfolio-desc">
-                    Authored concise help articles addressing common user issues like password reset, lead creation, and error resolution. Focused on clarity and user self-service to reduce support burden.
-                </p>
-                <div class="portfolio-tags">
-                    <span class="portfolio-tag">Help Center</span>
-                    <span class="portfolio-tag">Troubleshooting</span>
-                    <span class="portfolio-tag">Self-Service</span>
+                <div class="portfolio-card">
+                    <div class="portfolio-header">
+                        <h3>Help Center Articles</h3>
+                        <span class="portfolio-type">Salesforce CRM</span>
+                    </div>
+                    <p class="portfolio-desc">
+                        Authored concise help articles addressing common user issues like password reset, lead creation, and error resolution. Focused on clarity and user self-service to reduce support burden.
+                    </p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">Help Center</span>
+                        <span class="portfolio-tag">Troubleshooting</span>
+                        <span class="portfolio-tag">Self-Service</span>
+                    </div>
                 </div>
             </div>
 
         </div>
     </section>
+
 
     <!-- Recognition - Light PURPLE glow, darker on hover -->
     <section id="awards" class="awards-section reveal">
