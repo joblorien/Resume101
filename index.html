@@ -660,7 +660,7 @@
             box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
         }
 
-        /* Recognition Section - Light PURPLE glow, darker on hover */
+                /* Recognition Section - PURPLE Glow */
         .awards-section {
             background: var(--darker-bg);
             position: relative;
@@ -673,17 +673,76 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at center, rgba(184, 41, 221, 0.05) 0%, transparent 70%);
+            background: radial-gradient(circle at center, rgba(184, 41, 221, 0.08) 0%, transparent 70%);
             pointer-events: none;
         }
 
-        
+        .award-card {
+            max-width: 700px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(184, 41, 221, 0.08), rgba(0, 212, 255, 0.03));
+            border: 2px solid rgba(184, 41, 221, 0.3);
+            padding: 3.5rem;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 0 40px rgba(184, 41, 221, 0.15);
+            animation: award-glow 3s ease-in-out infinite;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+
+        .award-card:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, rgba(184, 41, 221, 0.15), rgba(0, 212, 255, 0.05));
+            border-color: rgba(184, 41, 221, 0.6);
+            box-shadow: 0 20px 60px rgba(184, 41, 221, 0.4);
+        }
+
+        @keyframes award-glow {
+            0%, 100% { box-shadow: 0 0 40px rgba(184, 41, 221, 0.15); }
+            50% { box-shadow: 0 0 60px rgba(184, 41, 221, 0.25), 0 0 100px rgba(184, 41, 221, 0.1); }
+        }
+
+        .award-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 20px rgba(184, 41, 221, 0.5));
+        }
+
+        .award-title {
+            color: var(--neon-purple);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(184, 41, 221, 0.5);
+        }
+
+        .award-org {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .award-date {
+            display: inline-block;
+            background: rgba(184, 41, 221, 0.2);
+            color: var(--neon-purple);
+            padding: 0.5rem 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid rgba(184, 41, 221, 0.5);
+            box-shadow: 0 0 20px rgba(184, 41, 221, 0.3);
+        }
 
         .award-desc {
             color: var(--text-secondary);
             line-height: 1.7;
             font-size: 1.05rem;
         }
+
 
         /* Academic Background - BLUE Glow */
         .education-section {
