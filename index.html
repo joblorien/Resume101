@@ -700,4 +700,669 @@
 
         @keyframes award-glow {
             
-            0%, 100% { box-shadow: 0 0 60px rgba(184, 41, 221, 0.2)
+            0%, 100% { box-shadow: 0 0 60px rgba(184, 41, 221, 0.2)            50% { box-shadow: 0 0 100px rgba(184, 41, 221, 0.4), 0 0 150px rgba(0, 212, 255, 0.1); }
+        }
+
+        .award-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 20px rgba(184, 41, 221, 0.5));
+        }
+
+        .award-title {
+            color: var(--neon-purple);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(184, 41, 221, 0.5);
+        }
+
+        .award-org {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .award-date {
+            display: inline-block;
+            background: rgba(184, 41, 221, 0.2);
+            color: var(--neon-purple);
+            padding: 0.5rem 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid var(--neon-purple);
+            box-shadow: 0 0 20px rgba(184, 41, 221, 0.3);
+        }
+
+        .award-desc {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* Academic Background - BLUE Glow (was purple) */
+        .education-section {
+            position: relative;
+        }
+
+        .education-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(0, 212, 255, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .edu-card {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            background: var(--card-bg);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            padding: 3rem;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.15);
+            animation: edu-glow 3s ease-in-out infinite;
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes edu-glow {
+            0%, 100% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.15); }
+            50% { box-shadow: 0 0 80px rgba(0, 212, 255, 0.3), 0 0 120px rgba(184, 41, 221, 0.1); }
+        }
+
+        .edu-degree {
+            color: var(--neon-blue);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+        }
+
+        .edu-school {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .edu-details {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Professional Certificates */
+        .certs-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .cert-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            padding: 1.5rem;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .cert-item:hover {
+            border-color: rgba(0, 212, 255, 0.4);
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.1);
+        }
+
+        .cert-info strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+        }
+
+        .cert-provider {
+            color: var(--neon-blue);
+            font-size: 0.9rem;
+        }
+
+        .cert-date {
+            color: var(--text-secondary);
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .cert-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+
+        /* Let's Connect - Holographic Cards */
+        .contact-section {
+            background: var(--darker-bg);
+            text-align: center;
+            position: relative;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .contact-text {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(184, 41, 221, 0.05));
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            padding: 2rem 3rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            min-width: 280px;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s;
+            opacity: 0;
+        }
+
+        .contact-card:hover::before {
+            animation: hologram-sweep 0.8s ease-in-out;
+        }
+
+        @keyframes hologram-sweep {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--neon-blue);
+            box-shadow: 
+                0 0 40px rgba(0, 212, 255, 0.3),
+                inset 0 0 40px rgba(0, 212, 255, 0.05);
+            animation: hologram-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes hologram-pulse {
+            0%, 100% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.3), inset 0 0 40px rgba(0, 212, 255, 0.05); }
+            50% { box-shadow: 0 0 80px rgba(0, 212, 255, 0.5), inset 0 0 60px rgba(0, 212, 255, 0.1); }
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 1rem;
+            fill: var(--neon-blue);
+            filter: drop-shadow(0 0 10px var(--neon-blue));
+        }
+
+        .contact-label {
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--neon-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-value {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            word-break: break-all;
+        }
+
+        .location-text {
+            margin-top: 3rem;
+            color: var(--neon-blue);
+            font-family: monospace;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem;
+            background: var(--dark-bg);
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+            color: var(--text-secondary);
+        }
+
+        footer .highlight {
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .contact-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Animated Grid Background -->
+    <div class="grid-bg"></div>
+
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo glitch" data-text="JOB RYAN">JOB RYAN</div>
+            <ul class="nav-links">
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#awards">Recognition</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="JOB RYAN">JOB RYAN</h1>
+            <div class="hero-subtitle">Technical Writer</div>
+            <p class="hero-desc">
+                Detail-oriented Technical Writer with 2+ years of experience creating clear, user-focused documentation for complex systems and products.
+            </p>
+            <div>
+                <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+                <a href="#contact" class="btn">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile" class="profile-section reveal">
+        <h2 class="section-title">Profile</h2>
+        <div class="profile-content">
+            <div class="profile-text">
+                <p>
+                    Detail-oriented <span class="highlight">Technical Writer</span> with 2+ years of experience creating clear, user-focused documentation for complex systems and products.
+                </p>
+                <p>
+                    Expert in translating complex engineering specifications into clear, structured documentation. Managed end-to-end documentation lifecycle including authoring, peer reviews, and version control coordination.
+                </p>
+                <p>
+                    Recognized with the <span class="highlight">WOW Award</span> for quickly cross-skilling to handle multiple technical documents and providing strong team support.
+                </p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span class="stat-number">350+</span>
+                    <div class="stat-label">XML Documents</div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">20+</span>
+                    <div class="stat-label">Team Members Trained</div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">2+</span>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">100%</span>
+                    <div class="stat-label">DITA Compliance</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Proficiencies - Updated Design -->
+    <section id="skills" class="reveal">
+        <h2 class="section-title">Technical Proficiencies</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Standards & Languages</h3>
+                <div class="skill-content">
+                    <ul class="skill-list">
+                        <li>Markdown</li>
+                        <li>XML</li>
+                        <li>DITA XML</li>
+                        <li>HTML</li>
+                        <li>JSON</li>
+                        <li>STE</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Authoring Tools</h3>
+                <div class="skill-content">
+                    <ul class="skill-list">
+                        <li>Pennant R4i Writer</li>
+                        <li>Adobe FrameMaker</li>
+                        <li>Oxygen XML Author</li>
+                        <li>Adobe Acrobat Pro</li>
+                        <li>Tech Illustrator</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Collaboration & CMS</h3>
+                <div class="skill-content">
+                    <ul class="skill-list">
+                        <li>Git / GitHub</li>
+                        <li>JIRA</li>
+                        <li>CMS</li>
+                        <li>MS Office</li>
+                        <li>Excel</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Processes</h3>
+                <div class="skill-content">
+                    <ul class="skill-list">
+                        <li>Agile SDLC</li>
+                        <li>DDLC</li>
+                        <li>Docs-as-Code</li>
+                        <li>Peer Review</li>
+                        <li>Impact Analysis</li>
+                        <li>Structured Authoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section id="experience" class="experience-section reveal">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="timeline">
+            
+            <div class="job-card">
+                <div class="job-date">Nov 2023 – Present</div>
+                <h3 class="job-title">Technical Writer - Associate II</h3>
+                <div class="job-company">Capgemini • Bangalore</div>
+                <ul class="job-list">
+                    <li>Authored, updated, and maintained 350+ XML-based documents ensuring content reuse, consistency, and DITA compliance</li>
+                    <li>Translated complex engineering specifications into clear, structured, user-friendly documentation</li>
+                    <li>Managed the end-to-end documentation lifecycle, including authoring, peer reviews, and version control coordination</li>
+                    <li>Acted as a primary peer reviewer and proofreader, ensuring zero-defect deliverables and documentation continuity</li>
+                    <li>Collaborated with engineers and SMEs to validate requirements and align documentation with product updates</li>
+                    <li>Led vendor data recreation activities and independently managed tooling and Content Management System (CMS) workflow improvements</li>
+                    <li>Served as the team's go-to documentation expert, driving quality improvements and earning the WOW Award</li>
+                    <li>Trained and mentored 20+ team members on structured authoring tools and CMS best practices</li>
+                </ul>
+            </div>
+
+            <div class="job-card">
+                <div class="job-date">Apr 2023 – May 2023</div>
+                <h3 class="job-title">Technical Writer Intern</h3>
+                <div class="job-company">Capgemini • Bangalore</div>
+                <ul class="job-list">
+                    <li>Supported authoring and proofreading activities for technical documentation</li>
+                    <li>Assisted in maintaining documentation quality and consistency standards</li>
+                </ul>
+            </div>
+
+            <div class="job-card">
+                <div class="job-date">Apr 2021 – Sep 2021</div>
+                <h3 class="job-title">Academic Support & Technical Writer Intern</h3>
+                <div class="job-company">Sunali's Classes • Remote</div>
+                <ul class="job-list">
+                    <li>Authored academic content to improve clarity, structure, and language</li>
+                    <li>Enhanced documentation standards for educational materials</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Project Portfolio -->
+    <section id="portfolio" class="reveal">
+        <h2 class="section-title">Project Portfolio</h2>
+        <div class="portfolio-grid">
+            
+            <div class="portfolio-card">
+                <div class="portfolio-header">
+                    <h3>Salesforce CRM Documentation</h3>
+                    <span class="portfolio-type">Product Documentation</span>
+                </div>
+                <p class="portfolio-desc">
+                    Created high-level product documentation outlining Salesforce CRM's features, SaaS model, and user base. Demonstrated ability to write clear, structured content for enterprise SaaS platforms.
+                </p>
+                <div class="portfolio-tags">
+                    <span class="portfolio-tag">SaaS</span>
+                    <span class="portfolio-tag">CRM</span>
+                    <span class="portfolio-tag">Enterprise</span>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-header">
+                    <h3>SaaS User Guide</h3>
+                    <span class="portfolio-type">Salesforce CRM</span>
+                </div>
+                <p class="portfolio-desc">
+                    Developed modular, task-based user guides covering onboarding, user roles, lead management, and troubleshooting. Organized content into multiple Markdown files, reflecting industry documentation standards.
+                </p>
+                <div class="portfolio-tags">
+                    <span class="portfolio-tag">Markdown</span>
+                    <span class="portfolio-tag">User Guide</span>
+                    <span class="portfolio-tag">Modular</span>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-header">
+                    <h3>Help Center Articles</h3>
+                    <span class="portfolio-type">Salesforce CRM</span>
+                </div>
+                <p class="portfolio-desc">
+                    Authored concise help articles addressing common user issues like password reset, lead creation, and error resolution. Focused on clarity and user self-service to reduce support burden.
+                </p>
+                <div class="portfolio-tags">
+                    <span class="portfolio-tag">Help Center</span>
+                    <span class="portfolio-tag">Troubleshooting</span>
+                    <span class="portfolio-tag">Self-Service</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Recognition - PURPLE Glow -->
+    <section id="awards" class="awards-section reveal">
+        <h2 class="section-title">Recognition</h2>
+        <div class="award-card">
+            <div class="award-icon">🏆</div>
+            <h3 class="award-title">WOW Award</h3>
+            <div class="award-org">Capgemini</div>
+            <div class="award-date">October 2024</div>
+            <p class="award-desc">
+                Recognized for quickly cross-skilling to handle multiple technical documents, becoming proficient in Tech Illustrator, and providing strong team support through high-quality peer reviews, backlog rework ownership, and contributions to DHC logo samples.
+            </p>
+        </div>
+    </section>
+
+    <!-- Academic Background - BLUE Glow -->
+    <section id="education" class="education-section reveal">
+        <h2 class="section-title">Academic Background</h2>
+        
+        <div class="edu-card">
+            <h3 class="edu-degree">B.E. Aeronautical Engineering</h3>
+            <div class="edu-school">KCG College Of Technology | Anna University</div>
+            <div class="edu-details">Chennai • May 2019 – May 2023</div>
+        </div>
+
+        <h3 style="text-align: center; margin-bottom: 2rem; color: var(--neon-blue); text-transform: uppercase; letter-spacing: 2px;">Professional Certificates</h3>
+        
+        <div class="certs-grid">
+            <div class="cert-item">
+                <div class="cert-info">
+                    <strong>Version Control</strong>
+                    <span class="cert-provider">Meta</span>
+                </div>
+                <div class="cert-date">Dec 2025</div>
+            </div>
+            <div class="cert-item">
+                <div class="cert-info">
+                    <strong>Learn Markdown</strong>
+                    <span class="cert-provider">Scrimba</span>
+                </div>
+                <div class="cert-date">Dec 2025</div>
+            </div>
+            <div class="cert-item">
+                <div class="cert-info">
+                    <strong>General English Upper Advanced CEFR Level C2</strong>
+                    <span class="cert-provider">EF SOLO</span>
+                </div>
+                <div class="cert-date">Dec 2023</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Let's Connect -->
+    <section id="contact" class="contact-section reveal">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="contact-text">
+            Ready to document the future? Let's connect and create something extraordinary together.
+        </p>
+        <div class="contact-grid">
+            <a href="mailto:jobrider123@gmail.com" class="contact-card">
+                <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                <span class="contact-label">Email</span>
+                <span class="contact-value">jobrider123@gmail.com</span>
+            </a>
+            
+            <a href="tel:+919704870370" class="contact-card">
+                <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+                <span class="contact-label">Phone</span>
+                <span class="contact-value">+91 97048 70370</span>
+            </a>
+            
+            <a href="https://linkedin.com/in/jobryan" target="_blank" class="contact-card">
+                <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-value">linkedin.com/in/jobryan</span>
+            </a>
+        </div>
+        <div class="location-text">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            Bangalore, India
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Job Ryan. <span class="highlight">Documentation Architect</span> • System Online</p>
+    </footer>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // Scroll reveal animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        window.addEventListener("load", function() {
+            createParticles();
+            reveal();
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
+
